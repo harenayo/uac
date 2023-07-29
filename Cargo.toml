@@ -1,11 +1,11 @@
 [package]
 name = "uac"
 version = "0.1.2"
-authors = ["Nabla"]
+authors = ["Harenayo"]
 edition = "2021"
 description = "A command to run a program as administrator in Windows"
 readme = "README.md"
-repository = "https://gitlab.com/anynabla/uac"
+repository = "https://github.com/harenayo/uac"
 license = "MIT"
 
 [dependencies.windows]
@@ -19,10 +19,6 @@ features = [
     "Win32_System_WindowsProgramming",
 ]
 
-[dependencies.defer]
-git = "https://gitlab.com/anynabla/defer"
-tag = "0.1.1"
-
-[dependencies.text]
-git = "https://gitlab.com/anynabla/text"
-tag = "0.1.1"
+[dependencies.keymacro]
+git = "https://github.com/harenayo/keymacro"
+tag = "0.1.0"

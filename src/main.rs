@@ -1,39 +1,43 @@
-use defer::defer;
-use std::{
-    mem::size_of,
-    ptr::null,
-    slice::from_raw_parts as slice,
-};
-use text::text;
-use windows::{
-    core::{
-        wcslen,
-        Result,
-        PCWSTR,
-        PWSTR,
+use {
+    keymacro::{
+        defer,
+        text,
     },
-    Win32::{
-        Foundation::{
-            CloseHandle,
-            WIN32_ERROR,
+    std::{
+        mem::size_of,
+        ptr::null,
+        slice::from_raw_parts as slice,
+    },
+    windows::{
+        core::{
+            wcslen,
+            Result,
+            PCWSTR,
+            PWSTR,
         },
-        System::{
-            Console::{
-                AttachConsole,
-                FreeConsole,
-                ATTACH_PARENT_PROCESS,
+        Win32::{
+            Foundation::{
+                CloseHandle,
+                WIN32_ERROR,
             },
-            Environment::GetCommandLineW,
-            Threading::{
-                CreateProcessW,
-                ExitProcess,
-                GetExitCodeProcess,
-                WaitForSingleObject,
-                PROCESS_CREATION_FLAGS,
-                PROCESS_INFORMATION,
-                STARTUPINFOW,
+            System::{
+                Console::{
+                    AttachConsole,
+                    FreeConsole,
+                    ATTACH_PARENT_PROCESS,
+                },
+                Environment::GetCommandLineW,
+                Threading::{
+                    CreateProcessW,
+                    ExitProcess,
+                    GetExitCodeProcess,
+                    WaitForSingleObject,
+                    PROCESS_CREATION_FLAGS,
+                    PROCESS_INFORMATION,
+                    STARTUPINFOW,
+                },
+                WindowsProgramming::INFINITE,
             },
-            WindowsProgramming::INFINITE,
         },
     },
 };
